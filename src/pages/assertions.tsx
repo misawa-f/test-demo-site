@@ -122,6 +122,8 @@ export default function Assertions() {
                 handleCheckboxCheck={handleCheckboxCheck}
                 result={checkboxes}
               />
+            </div>
+            <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
               <ButtonComponent
                 name='ボタン(有効)'
                 handleButtonClick={handleButtonClick}
@@ -139,6 +141,8 @@ export default function Assertions() {
                 result={selectedName}
               />
               <LinkComponent url='https://www.google.com' text='Google' />
+            </div>
+            <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
               <TextVisibleComponent
                 heading='サンプル見出し'
                 text='これはサンプルテキストです。'
