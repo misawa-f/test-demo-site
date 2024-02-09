@@ -227,9 +227,9 @@ export const TextComponent: React.FC<TextComponentProps> = ({
 }) => {
   return (
     <div>
-      <h1 className='text-sm font-semibold leading-7 text-gray-900'>
+      <h2 className='text-sm font-semibold leading-7 text-gray-900'>
         {heading}
-      </h1>
+      </h2>
       <p className='text-sm'>{text}</p>
     </div>
   );
@@ -243,15 +243,15 @@ export const TextVisibleComponent: React.FC<TextComponentProps> = ({
   const today = dayjs().format('YYYY年MM月DD日');
   return (
     <div>
-      <h1
+      <h2
         id='example-head'
         className='text-sm font-semibold leading-7 text-gray-900'
       >
         {heading}
-      </h1>
-      <h2 className='text-sm text-red-500' style={{ fontWeight: '600' }}>
-        今日は{today}です。
       </h2>
+      <h3 className='text-sm text-red-500' style={{ fontWeight: '600' }}>
+        今日は{today}です。
+      </h3>
       <p className='text-sm'>{text}</p>
       <p className='text-sm' style={{ visibility: 'hidden' }}>
         これはvisibility:hiddenでユーザーからは見えないテキストです。
@@ -287,7 +287,7 @@ export const ItemListComponent: React.FC<ItemListComponentProps> = ({
           <ul className='list-disc'>
             {['アイテム1', 'アイテム2', 'アイテム3'].map((item) => (
               <li className='text-sm' key={item}>
-                <h3>{item}</h3>
+                <h4>{item}</h4>
                 <button
                   className='rounded-md bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
                   onClick={(e) => handleItemButtonClick(e, item)}

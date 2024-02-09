@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import dayjs from 'dayjs';
+import 'dayjs/locale/ja';
 import {
   TextBoxComponent,
   RadioButtonComponent,
@@ -11,6 +13,8 @@ import {
   ItemListComponent,
   LoadingButtonComponent,
 } from '@/components/form/Form';
+
+dayjs.locale('ja');
 
 export default function Assertions() {
   const options = {
@@ -29,6 +33,8 @@ export default function Assertions() {
   const [selectedItem, setSelectedItem] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [showText, setShowText] = useState<boolean>(false);
+
+  const today = dayjs().format('YYYY年MM月DD日');
 
   const handleTextboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
@@ -94,71 +100,74 @@ export default function Assertions() {
         <title>Assertions</title>
       </Head>
       <div className='container mx-auto'>
-        <form className='mx-5'>
-          <div className='space-y-12'>
-            <div className='my-10 grid grid-cols-4 gap-x-6 gap-y-8'>
-              <TextBoxComponent
-                label='テキストボックス(有効)'
-                placeholder='プレースホルダー'
-                id='textbox-editable'
-                name='textbox-editable'
-                handleTextboxChange={handleTextboxChange}
-                result={text}
-              />
-              <TextBoxComponent
-                label='テキストボックス(無効)'
-                placeholder='プレースホルダー(無効)'
-                id='textbox-disabled'
-                name='textbox-disabled'
-                handleTextboxChange={handleTextboxDisabledChange}
-                result={textDisabled}
-                disabled={true}
-              />
-              <RadioButtonComponent
-                handleRadioCheck={handleRadioCheck}
-                result={radio}
-              />
-              <CheckboxComponent
-                handleCheckboxCheck={handleCheckboxCheck}
-                result={checkboxes}
-              />
+        <div className='mx-10'>
+          <h1 className='mt-5 text-3xl font-bold'>Assertion</h1>
+          <form>
+            <div className='space-y-12'>
+              <div className='mt-5 grid grid-cols-4 gap-x-6 gap-y-8'>
+                <TextBoxComponent
+                  label='テキストボックス(有効)'
+                  placeholder='プレースホルダー'
+                  id='textbox-editable'
+                  name='textbox-editable'
+                  handleTextboxChange={handleTextboxChange}
+                  result={text}
+                />
+                <TextBoxComponent
+                  label='テキストボックス(無効)'
+                  placeholder='プレースホルダー(無効)'
+                  id='textbox-disabled'
+                  name='textbox-disabled'
+                  handleTextboxChange={handleTextboxDisabledChange}
+                  result={textDisabled}
+                  disabled={true}
+                />
+                <RadioButtonComponent
+                  handleRadioCheck={handleRadioCheck}
+                  result={radio}
+                />
+                <CheckboxComponent
+                  handleCheckboxCheck={handleCheckboxCheck}
+                  result={checkboxes}
+                />
+              </div>
+              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
+                <ButtonComponent
+                  name='ボタン(有効)'
+                  handleButtonClick={handleButtonClick}
+                  result={button}
+                />
+                <ButtonComponent
+                  name='ボタン(無効)'
+                  handleButtonClick={handleButtonDisabledClick}
+                  result={buttonDisabled}
+                  disabled={true}
+                />
+                <DropdownComponent
+                  handleDropdownSelect={handleDropdownSelect}
+                  value={dropdown}
+                  result={selectedName}
+                />
+                <LinkComponent url='https://www.google.com' text='Google' />
+              </div>
+              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
+                <TextVisibleComponent
+                  heading='サンプル見出し'
+                  text='これはサンプルテキストです。'
+                />
+                <ItemListComponent
+                  handleItemButtonClick={handleItemButtonClick}
+                  result={selectedItem}
+                />
+                <LoadingButtonComponent
+                  loading={loading}
+                  showText={showText}
+                  handleLoadingButtonClick={handleLoadingButtonClick}
+                />
+              </div>
             </div>
-            <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
-              <ButtonComponent
-                name='ボタン(有効)'
-                handleButtonClick={handleButtonClick}
-                result={button}
-              />
-              <ButtonComponent
-                name='ボタン(無効)'
-                handleButtonClick={handleButtonDisabledClick}
-                result={buttonDisabled}
-                disabled={true}
-              />
-              <DropdownComponent
-                handleDropdownSelect={handleDropdownSelect}
-                value={dropdown}
-                result={selectedName}
-              />
-              <LinkComponent url='https://www.google.com' text='Google' />
-            </div>
-            <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
-              <TextVisibleComponent
-                heading='サンプル見出し'
-                text='これはサンプルテキストです。'
-              />
-              <ItemListComponent
-                handleItemButtonClick={handleItemButtonClick}
-                result={selectedItem}
-              />
-              <LoadingButtonComponent
-                loading={loading}
-                showText={showText}
-                handleLoadingButtonClick={handleLoadingButtonClick}
-              />
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </>
   );

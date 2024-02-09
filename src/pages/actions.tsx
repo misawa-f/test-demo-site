@@ -86,70 +86,73 @@ export default function Actions() {
         <title>Actions</title>
       </Head>
       <div className='container mx-auto'>
-        <form className='mx-5'>
-          <div className='space-y-12'>
-            <div className='mt-10 grid grid-cols-4 gap-x-6 gap-y-8'>
-              <TextBoxComponent
-                label='テキストボックス'
-                placeholder='プレースホルダー'
-                id='textbox'
-                name='textbox'
-                handleTextboxChange={handleTextboxChange}
-                result={text}
-              />
-              <RadioButtonComponent
-                handleRadioCheck={handleRadioCheck}
-                result={radio}
-              />
-              <CheckboxComponent
-                handleCheckboxCheck={handleCheckboxCheck}
-                result={checkboxes}
-              />
-              <ButtonComponent
-                name='ボタン'
-                handleButtonClick={handleButtonClick}
-                result={button}
-              />
-            </div>
-            <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
-              <DropdownComponent
-                handleDropdownSelect={handleDropdownSelect}
-                value={dropdown}
-                result={selectedName}
-              />
-              <TextComponent
-                heading='サンプル見出し'
-                text='これはサンプルテキストです。'
-              />
-              <ImageComponent
-                src='/images/curryrice.png'
-                alt='カレーライス'
-                width={100}
-                height={100}
-              />
-              <FocusComponent
-                isFocused={isFocused}
-                setIsFocused={setIsFocused}
-              />
-            </div>
-            <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
-              <KeyInputComponent
-                result={keyPressed}
-                handleKeyDown={handleKeyDown}
-              />
-              <DialogComponent result={dialog} handleDialog={handleDialog} />
-              <FileUploadComponent
-                uploadedFile={uploadedFile}
-                handleFileUpload={handleFileUpload}
-              />
+        <div className='mx-10'>
+          <h1 className='mt-5 text-3xl font-bold'>Action</h1>
+          <form>
+            <div className='space-y-12'>
+              <div className='mt-5 grid grid-cols-4 gap-x-6 gap-y-8'>
+                <TextBoxComponent
+                  label='テキストボックス'
+                  placeholder='プレースホルダー'
+                  id='textbox'
+                  name='textbox'
+                  handleTextboxChange={handleTextboxChange}
+                  result={text}
+                />
+                <RadioButtonComponent
+                  handleRadioCheck={handleRadioCheck}
+                  result={radio}
+                />
+                <CheckboxComponent
+                  handleCheckboxCheck={handleCheckboxCheck}
+                  result={checkboxes}
+                />
+                <ButtonComponent
+                  name='ボタン'
+                  handleButtonClick={handleButtonClick}
+                  result={button}
+                />
+              </div>
+              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
+                <DropdownComponent
+                  handleDropdownSelect={handleDropdownSelect}
+                  value={dropdown}
+                  result={selectedName}
+                />
+                <TextComponent
+                  heading='サンプル見出し'
+                  text='これはサンプルテキストです。'
+                />
+                <ImageComponent
+                  src='/images/curryrice.png'
+                  alt='カレーライス'
+                  width={100}
+                  height={100}
+                />
+                <FocusComponent
+                  isFocused={isFocused}
+                  setIsFocused={setIsFocused}
+                />
+              </div>
+              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
+                <KeyInputComponent
+                  result={keyPressed}
+                  handleKeyDown={handleKeyDown}
+                />
+                <DialogComponent result={dialog} handleDialog={handleDialog} />
+                <FileUploadComponent
+                  uploadedFile={uploadedFile}
+                  handleFileUpload={handleFileUpload}
+                />
 
-              <FileDownloadComponent
-                filePath='/images/shortcake.png'
-                fileName='shortcake.png'
-              />
+                <FileDownloadComponent
+                  filePath='/images/shortcake.png'
+                  fileName='shortcake.png'
+                />
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </>
   );
