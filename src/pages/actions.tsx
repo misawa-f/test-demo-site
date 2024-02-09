@@ -85,17 +85,17 @@ export default function Actions() {
       <Head>
         <title>Actions</title>
       </Head>
-      <div className='container mx-auto'>
-        <div className='mx-10'>
-          <h1 className='mt-5 text-3xl font-bold'>Action</h1>
+      <div className="container mx-auto">
+        <div className="mx-10">
+          <h1 className="mt-5 text-3xl font-bold">Action</h1>
           <form>
-            <div className='space-y-12'>
-              <div className='mt-5 grid grid-cols-4 gap-x-6 gap-y-8'>
+            <div className="space-y-12">
+              <div className="mt-5 grid grid-cols-4 gap-x-6 gap-y-8">
                 <TextBoxComponent
-                  label='テキストボックス'
-                  placeholder='プレースホルダー'
-                  id='textbox'
-                  name='textbox'
+                  label="テキストボックス"
+                  placeholder="プレースホルダー"
+                  id="textbox"
+                  name="textbox"
                   handleTextboxChange={handleTextboxChange}
                   result={text}
                 />
@@ -108,24 +108,24 @@ export default function Actions() {
                   result={checkboxes}
                 />
                 <ButtonComponent
-                  name='ボタン'
+                  name="ボタン"
                   handleButtonClick={handleButtonClick}
                   result={button}
                 />
               </div>
-              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
+              <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
                 <DropdownComponent
                   handleDropdownSelect={handleDropdownSelect}
                   value={dropdown}
                   result={selectedName}
                 />
                 <TextComponent
-                  heading='サンプル見出し'
-                  text='これはサンプルテキストです。'
+                  heading="サンプル見出し"
+                  text="これはサンプルテキストです。"
                 />
                 <ImageComponent
-                  src='/images/curryrice.png'
-                  alt='カレーライス'
+                  src="/images/curryrice.png"
+                  alt="カレーライス"
                   width={100}
                   height={100}
                 />
@@ -134,7 +134,7 @@ export default function Actions() {
                   setIsFocused={setIsFocused}
                 />
               </div>
-              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
+              <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
                 <KeyInputComponent
                   result={keyPressed}
                   handleKeyDown={handleKeyDown}
@@ -146,8 +146,8 @@ export default function Actions() {
                 />
 
                 <FileDownloadComponent
-                  filePath='/images/shortcake.png'
-                  fileName='shortcake.png'
+                  filePath="/images/shortcake.png"
+                  fileName="shortcake.png"
                 />
               </div>
             </div>

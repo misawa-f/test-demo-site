@@ -99,25 +99,25 @@ export default function Assertions() {
       <Head>
         <title>Assertions</title>
       </Head>
-      <div className='container mx-auto'>
-        <div className='mx-10'>
-          <h1 className='mt-5 text-3xl font-bold'>Assertion</h1>
+      <div className="container mx-auto">
+        <div className="mx-10">
+          <h1 className="mt-5 text-3xl font-bold">Assertion</h1>
           <form>
-            <div className='space-y-12'>
-              <div className='mt-5 grid grid-cols-4 gap-x-6 gap-y-8'>
+            <div className="space-y-12">
+              <div className="mt-5 grid grid-cols-4 gap-x-6 gap-y-8">
                 <TextBoxComponent
-                  label='テキストボックス(有効)'
-                  placeholder='プレースホルダー'
-                  id='textbox-editable'
-                  name='textbox-editable'
+                  label="テキストボックス(有効)"
+                  placeholder="プレースホルダー"
+                  id="textbox-editable"
+                  name="textbox-editable"
                   handleTextboxChange={handleTextboxChange}
                   result={text}
                 />
                 <TextBoxComponent
-                  label='テキストボックス(無効)'
-                  placeholder='プレースホルダー(無効)'
-                  id='textbox-disabled'
-                  name='textbox-disabled'
+                  label="テキストボックス(無効)"
+                  placeholder="プレースホルダー(無効)"
+                  id="textbox-disabled"
+                  name="textbox-disabled"
                   handleTextboxChange={handleTextboxDisabledChange}
                   result={textDisabled}
                   disabled={true}
@@ -131,14 +131,14 @@ export default function Assertions() {
                   result={checkboxes}
                 />
               </div>
-              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
+              <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
                 <ButtonComponent
-                  name='ボタン(有効)'
+                  name="ボタン(有効)"
                   handleButtonClick={handleButtonClick}
                   result={button}
                 />
                 <ButtonComponent
-                  name='ボタン(無効)'
+                  name="ボタン(無効)"
                   handleButtonClick={handleButtonDisabledClick}
                   result={buttonDisabled}
                   disabled={true}
@@ -148,12 +148,12 @@ export default function Assertions() {
                   value={dropdown}
                   result={selectedName}
                 />
-                <LinkComponent url='https://www.google.com' text='Google' />
+                <LinkComponent url="https://www.google.com" text="Google" />
               </div>
-              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
+              <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
                 <TextVisibleComponent
-                  heading='サンプル見出し'
-                  text='これはサンプルテキストです。'
+                  heading="サンプル見出し"
+                  text="これはサンプルテキストです。"
                 />
                 <ItemListComponent
                   handleItemButtonClick={handleItemButtonClick}

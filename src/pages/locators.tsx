@@ -84,17 +84,17 @@ export default function Locators() {
       <Head>
         <title>Locators</title>
       </Head>
-      <div className='container mx-auto'>
-        <div className='mx-10'>
-          <h1 className='mt-5 text-3xl font-bold'>Locator</h1>
+      <div className="container mx-auto">
+        <div className="mx-10">
+          <h1 className="mt-5 text-3xl font-bold">Locator</h1>
           <form>
-            <div className='space-y-12'>
-              <div className='mt-5 grid grid-cols-4 gap-x-6 gap-y-8'>
+            <div className="space-y-12">
+              <div className="mt-5 grid grid-cols-4 gap-x-6 gap-y-8">
                 <TextBoxComponent
-                  label='テキストボックス'
-                  placeholder='プレースホルダー'
-                  id='textbox'
-                  name='textbox'
+                  label="テキストボックス"
+                  placeholder="プレースホルダー"
+                  id="textbox"
+                  name="textbox"
                   handleTextboxChange={handleTextboxChange}
                   result={text}
                 />
@@ -107,43 +107,43 @@ export default function Locators() {
                   result={checkboxes}
                 />
                 <ButtonComponent
-                  name='ボタン'
+                  name="ボタン"
                   handleButtonClick={handleButtonClick}
                   result={button}
                 />
               </div>
-              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
-                <LinkComponent url='https://www.google.com' text='Google' />
+              <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
+                <LinkComponent url="https://www.google.com" text="Google" />
                 <TextComponent
-                  heading='サンプル見出し'
-                  text='これはサンプルテキストです。'
+                  heading="サンプル見出し"
+                  text="これはサンプルテキストです。"
                 />
                 <ItemListComponent
                   handleItemButtonClick={handleItemButtonClick}
                   result={selectedItem}
                 />
                 <ImageComponent
-                  src='/images/curryrice.png'
-                  alt='カレーライス'
+                  src="/images/curryrice.png"
+                  alt="カレーライス"
                   width={100}
                   height={100}
                 />
               </div>
-              <div className='mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200'>
+              <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
                 <TitleButtonComponent
                   handleTitleButtonClick={handleTitleButtonClick}
                   result={title}
-                  title='Title属性のボタンです'
+                  title="Title属性のボタンです"
                 />
                 <TestIdButtonComponent
                   handleTestIdButtonClick={handleTestIdButtonClick}
                   result={testId}
-                  testId='test-target'
+                  testId="test-target"
                 />
                 <SelectorComponent
                   handleColorButtonClick={handleColorButtonClick}
                   result={selectedColor}
-                  id='selector'
+                  id="selector"
                 />
               </div>
             </div>
