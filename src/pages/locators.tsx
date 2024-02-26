@@ -20,6 +20,7 @@ export default function Locators() {
     option2: 'オプション2',
     option3: 'オプション3',
   };
+  const test = true;
 
   const [text, setText] = useState<string>('');
   const [radio, setRadio] = useState<string>('ラジオ2');
@@ -87,67 +88,66 @@ export default function Locators() {
       <div className="container mx-auto">
         <div className="mx-10">
           <h1 className="mt-5 text-3xl font-bold">Locator</h1>
-          <form>
-            <div className="space-y-12">
-              <div className="mt-5 grid grid-cols-4 gap-x-6 gap-y-8">
-                <TextBoxComponent
-                  label="テキストボックス"
-                  placeholder="プレースホルダー"
-                  id="textbox"
-                  name="textbox"
-                  handleTextboxChange={handleTextboxChange}
-                  result={text}
-                />
-                <RadioButtonComponent
-                  handleRadioCheck={handleRadioCheck}
-                  result={radio}
-                />
-                <CheckboxComponent
-                  handleCheckboxCheck={handleCheckboxCheck}
-                  result={checkboxes}
-                />
-                <ButtonComponent
-                  name="ボタン"
-                  handleButtonClick={handleButtonClick}
-                  result={button}
-                />
-              </div>
-              <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
-                <LinkComponent url="https://www.google.com" text="Google" />
-                <TextComponent
-                  heading="サンプル見出し"
-                  text="これはサンプルテキストです。"
-                />
-                <ItemListComponent
-                  handleItemButtonClick={handleItemButtonClick}
-                  result={selectedItem}
-                />
-                <ImageComponent
-                  src="/images/curryrice.png"
-                  alt="カレーライス"
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
-                <TitleButtonComponent
-                  handleTitleButtonClick={handleTitleButtonClick}
-                  result={title}
-                  title="Title属性のボタンです"
-                />
-                <TestIdButtonComponent
-                  handleTestIdButtonClick={handleTestIdButtonClick}
-                  result={testId}
-                  testId="test-target"
-                />
-                <SelectorComponent
-                  handleColorButtonClick={handleColorButtonClick}
-                  result={selectedColor}
-                  id="selector"
-                />
-              </div>
+
+          <div className="space-y-12">
+            <div className="mt-5 grid grid-cols-4 gap-x-6 gap-y-8">
+              <TextBoxComponent
+                label="テキストボックス"
+                placeholder="プレースホルダー"
+                id="textbox"
+                name="textbox"
+                handleTextboxChange={handleTextboxChange}
+                result={text}
+              />
+              <RadioButtonComponent
+                handleRadioCheck={handleRadioCheck}
+                result={radio}
+              />
+              <CheckboxComponent
+                handleCheckboxCheck={handleCheckboxCheck}
+                result={checkboxes}
+              />
+              <ButtonComponent
+                name="ボタン"
+                handleButtonClick={handleButtonClick}
+                result={button}
+              />
             </div>
-          </form>
+            <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
+              <LinkComponent url="https://www.google.com" text="Google" />
+              <TextComponent
+                heading="サンプル見出し"
+                text="これはサンプルテキストです。"
+              />
+              <ItemListComponent
+                handleItemButtonClick={handleItemButtonClick}
+                result={selectedItem}
+              />
+              <ImageComponent
+                src="/images/curryrice.png"
+                alt="カレーライス"
+                width={100}
+                height={100}
+              />
+            </div>
+            <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
+              <TitleButtonComponent
+                handleTitleButtonClick={handleTitleButtonClick}
+                result={title}
+                title="Title属性のボタンです"
+              />
+              <TestIdButtonComponent
+                handleTestIdButtonClick={handleTestIdButtonClick}
+                result={testId}
+                testId="test-target"
+              />
+              <SelectorComponent
+                handleColorButtonClick={handleColorButtonClick}
+                result={selectedColor}
+                id="selector"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </>

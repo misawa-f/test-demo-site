@@ -185,6 +185,7 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
         {name}
       </legend>
       <button
+        type="button"
         onClick={handleButtonClick}
         className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-indigo-400 disabled:border-indigo-600 disabled:cursor-not-allowed"
         disabled={disabled}
@@ -289,6 +290,7 @@ export const ItemListComponent: React.FC<ItemListComponentProps> = ({
               <li className="text-sm" key={item}>
                 <h4>{item}</h4>
                 <button
+                  type="button"
                   className="rounded-md bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                   onClick={(e) => handleItemButtonClick(e, item)}
                 >
@@ -363,6 +365,7 @@ export const TitleButtonComponent: React.FC<TitleButtonComponentProps> = ({
         Title属性
       </div>
       <button
+        type="button"
         title={title}
         onClick={handleTitleButtonClick}
         className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -394,6 +397,7 @@ export const TestIdButtonComponent: React.FC<TestIdButtonComponentProps> = ({
         テストID
       </div>
       <button
+        type="button"
         data-testid={testId}
         onClick={handleTestIdButtonClick}
         className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -427,6 +431,7 @@ export const SelectorComponent: React.FC<SelectorComponentProps> = ({
       </div>
       <p className="text-sm">
         <button
+          type="button"
           className="text-red-500 rounded-md bg-white px-2.5 py-1 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
           onClick={(e) => handleColorButtonClick(e, '赤')}
         >
@@ -435,6 +440,7 @@ export const SelectorComponent: React.FC<SelectorComponentProps> = ({
         のボタンです。
         <br />
         <button
+          type="button"
           className="text-green-500 rounded-md bg-white px-2.5 py-1 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
           onClick={(e) => handleColorButtonClick(e, '緑')}
         >
@@ -566,6 +572,7 @@ export const DialogComponent: React.FC<DialogComponentProps> = ({
         ダイアログ
       </div>
       <button
+        type="button"
         onClick={handleDialog}
         className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
@@ -652,6 +659,7 @@ export const LoadingButtonComponent: React.FC<LoadingButtonComponentProps> = ({
         ローディング
       </div>
       <button
+        type="button"
         onClick={handleLoadingButtonClick}
         className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
