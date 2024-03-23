@@ -11,6 +11,7 @@ import {
   LinkComponent,
   TextVisibleComponent,
   ItemListComponent,
+  FocusComponent,
   LoadingButtonComponent,
 } from '@/components/form/Form';
 
@@ -26,11 +27,11 @@ export default function Assertions() {
   const [text, setText] = useState<string>('');
   const [textDisabled, setTextDisabled] = useState<string>('');
   const [radio, setRadio] = useState<string>('ラジオ2');
-  const [checkboxes, setCheckboxes] = useState<string[]>([]);
+  const [checkboxes, setCheckboxes] = useState<string[]>(['チェック2']);
   const [button, setButton] = useState<string>('');
-  const [buttonDisabled, setButtonDisabled] = useState<string>('');
   const [dropdown, setDropdown] = useState<string>('');
   const [selectedItem, setSelectedItem] = useState<string>('');
+  const [isFocused, setIsFocused] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [showText, setShowText] = useState<boolean>(false);
 
@@ -61,11 +62,6 @@ export default function Assertions() {
   const handleButtonClick = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setButton('クリックしました');
-  };
-
-  const handleButtonDisabledClick = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    setButtonDisabled('クリックしました');
   };
 
   const handleDropdownSelect = (
@@ -133,24 +129,15 @@ export default function Assertions() {
             </div>
             <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
               <ButtonComponent
-                name="ボタン(有効)"
+                name="ボタン"
                 handleButtonClick={handleButtonClick}
                 result={button}
-              />
-              <ButtonComponent
-                name="ボタン(無効)"
-                handleButtonClick={handleButtonDisabledClick}
-                result={buttonDisabled}
-                disabled={true}
               />
               <DropdownComponent
                 handleDropdownSelect={handleDropdownSelect}
                 value={dropdown}
                 result={selectedName}
               />
-              <LinkComponent url="https://www.google.com" text="Google" />
-            </div>
-            <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
               <TextVisibleComponent
                 heading="サンプル見出し"
                 text="これはサンプルテキストです。"
@@ -159,6 +146,14 @@ export default function Assertions() {
                 handleItemButtonClick={handleItemButtonClick}
                 result={selectedItem}
               />
+            </div>
+            <div className="mt-5 pt-5 grid grid-cols-4 gap-x-6 gap-y-8 border-t border-gray-200">
+              <FocusComponent
+                isFocused={isFocused}
+                setIsFocused={setIsFocused}
+              />
+              <LinkComponent url="https://www.google.com" text="Google" />
+
               <LoadingButtonComponent
                 loading={loading}
                 showText={showText}
