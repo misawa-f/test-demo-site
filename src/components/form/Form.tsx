@@ -243,9 +243,9 @@ export const TextVisibleComponent: React.FC<TextComponentProps> = ({
 }) => {
   const today = dayjs().format('YYYY年MM月DD日');
   return (
-    <div>
+    <div id="heading">
       <h2
-        id="example-head"
+        id="sample-heading"
         className="text-sm font-semibold leading-7 text-gray-900"
       >
         {heading}
@@ -260,7 +260,7 @@ export const TextVisibleComponent: React.FC<TextComponentProps> = ({
       <p className="text-sm" style={{ display: 'none' }}>
         これはdisplay:noneでユーザーからは見えないテキストです。
       </p>
-      <p data-testid="test-empty"></p>
+      <p id="empty"></p>
     </div>
   );
 };
