@@ -335,6 +335,7 @@ export const ImageComponent: React.FC<ImageComponentProps> = ({
           alt={alt}
           width={width}
           height={height}
+          priority={true}
           className="inline-block border border-gray-300 rounded-md"
         />
         <div className="opacity-0 invisible ml-2 text-sm group-hover:visible opacity-100 absolute">
